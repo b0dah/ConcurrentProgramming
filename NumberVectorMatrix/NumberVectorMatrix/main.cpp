@@ -13,7 +13,7 @@
 #include "AlgebraEssentials.h"
 #include "Generation.h"
 #include "OutputEssentials.h"
-#include <omp.h>
+//#include <omp.h>
 
 
 using namespace std;
@@ -22,39 +22,23 @@ using namespace std;
 // MARK:- LIFECYCLE
 int main(int argc, const char * argv[]) {
     
-    // INITIALIZING
-//    vector<int> v1 = {1,2,-1};
-//    vector<int> v2 = {2,2,2,2,2,2};
-
-//    int number = 100;
-//    
-//    vector<vector<int> > f = {
-//        {1,2,3},
-//        {4,5,6},
-//        {7,8,9}
-//    };
-//    
-//    vector<vector<int> > s = {
-//        {2,4,0},
-//        {-2,1,3},
-//        {-1,0,1}
-//    };
+    
     
     clock_t start, end;
-    
-    // COMP
-//    int result = vectorByVector(v1, v2);
-//    printf("result = %d", result);
-    
-//    vector<vector<int>> res = matrixByMatrix(f, s);
-//    prettyMatrixOutput(res);
+
     start = clock();
     
     srand(time(0));
-    vector<vector<int> > m = generateRandomMatrix(100, 100, 100);
-    vector <int> a = generateRandomVector(100, 1e3);
+    vector<vector<int> > m = generateRandomMatrix(5, 5, 10);
+    cout << "Random matrix";
+    prettyMatrixOutput(m);
+    
+    vector <int> a = generateRandomVector(5, 1e3);
+    cout<< "Random vector";
+    prettyVectorOutput(a);
     
     vector<int> res = matrixByVector(m, a);
+    prettyVectorOutput(res);
     
     end = clock();
     
@@ -83,3 +67,21 @@ int main(int argc, const char * argv[]) {
 //        printf("параллель\n");
 //    }
 //    printf("послед2\n");
+
+
+// INITIALIZING
+//    vector<int> v1 = {1,2,-1};
+//    vector<int> v2 = {2,2,2,2,2,2};
+//    int number = 100;
+//
+//    vector<vector<int> > f = {
+//        {1,2,3},
+//        {4,5,6},
+//        {7,8,9}
+//    };
+//
+//    vector<vector<int> > s = {
+//        {2,4,0},
+//        {-2,1,3},
+//        {-1,0,1}
+//    };

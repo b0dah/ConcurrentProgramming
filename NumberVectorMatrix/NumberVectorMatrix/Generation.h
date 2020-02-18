@@ -32,9 +32,7 @@ vector <vector <int> > generateRandomMatrix(int rows, int cols, int threshold) {
     result.resize(rows);
     
     for (int i=0; i<rows; i++) {
-        for (int j=0; j<cols; j++) {
-            result[i] = generateRandomVector(cols, threshold);
-        }
+        result[i] = generateRandomVector(cols, threshold);
     }
     return result;
 }
